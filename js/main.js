@@ -1,14 +1,5 @@
-/*function ingresarNombre(){
-    alert("Bienvenido/a ")
-    let nombre = prompt("¡Hola! Decime tu nombre ");
-    while (nombre === "") {
-        nombre = prompt("¡Hola! Decime tu nombre "); 
-    }
-    alert("Hola " + nombre + " esto es un simulador :)" );
-} 
 
-
-function productosUsuario(){
+ /*function productosUsuario(){
     let producto;
     do{
         producto= prompt("Eleji tu producto \n 1)rimmel \n 2) labial \n 3) Crema")}
@@ -21,18 +12,13 @@ function productosUsuario(){
             case "3":
                 return "crema";
         }
-    }
+    } */
 
-function final(){
-    alert ("usted compro " + compraUsuario + " gracias");
-}
-
-*/
 
 let ingreso = prompt("Ingresa un producto para mejorar tu busqueda");
 
 const productos = [
-    {id: 1, nombre : "Labial 24hs matte" , marca : "Maybelline", precio :1500},
+    {id: 1, nombre : "Labial 24hs matte" , marca : "Maybelline", precio : 1500},
     {id: 2, nombre : "Labial 24 hs" , marca : "Maybelline", precio :1600},
     {id: 3, nombre : "Labial matte" , marca : "Maybelline", precio :1300},
     {id: 4, nombre : "Labial hidratante" , marca : "Maybelline", precio :1000},
@@ -85,7 +71,7 @@ function busquedaporNombre(arr,filtro) {
     return nombreBusqueda;
 } 
 
-const resultado=busquedaporNombre(productos,ingreso);
+const resultado = busquedaporNombre(productos,ingreso);
 console.log(resultado);
 
 
@@ -121,9 +107,15 @@ const ul = document.getElementById("lista");
 
 for (const producto of productos) {
     let li = document.createElement("li");
-    li.innerHTML= producto.nombre;
+    li.innerHTML=
+   `<h3>${producto.nombre}</h3>
+    <p>${producto.marca}</p>
+    <span>${producto.precio}</span> `
     ul.append(li);
 }
 
+const h1 = document.getElementById("h1");
+let saludo = prompt("Hola ingresa tu nombre");
+h1.innerText = "Hola " + saludo ;
 
 
