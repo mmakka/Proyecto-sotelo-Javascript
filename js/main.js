@@ -1,22 +1,4 @@
 
- /*function productosUsuario(){
-    let producto;
-    do{
-        producto= prompt("Eleji tu producto \n 1)rimmel \n 2) labial \n 3) Crema")}
-        while(producto != 1 && producto != 2 && producto !=3);
-        switch (producto){
-            case "1":
-                return "rimmel";
-            case "2" :
-                return "labial";
-            case "3":
-                return "crema";
-        }
-    } */
-
-
-let ingreso = prompt("Ingresa un producto para mejorar tu busqueda");
-
 const productos = [
     {id: 1, nombre : "Labial 24hs matte" , marca : "Maybelline", precio : 1500},
     {id: 2, nombre : "Labial 24 hs" , marca : "Maybelline", precio :1600},
@@ -64,24 +46,25 @@ cargarArticulos(productos,nuevoProducto8);
 cargarArticulos(productos,nuevoProducto9);
 cargarArticulos(productos,nuevoProducto10);
 
+
 function busquedaporNombre(arr,filtro) {
     const nombreBusqueda = arr.filter ((el) => {
         return el.nombre.includes(filtro)
     });
     return nombreBusqueda;
-} 
+}
 
-const resultado = busquedaporNombre(productos,ingreso);
-console.log(resultado);
 
+//const resultado = busquedaporNombre(productos,ingreso);
+//console.log(resultado);
 
 //Primer paso para el carrito de compras
 
 carrito = [];
 
-for (const element of resultado){
-    carrito.push(element);
-}
+ //for (const element of resultado){
+  //  carrito.push(element);
+ //}
 
 busquedaporNombre(carrito,resultado);
 console.log(carrito);
@@ -102,9 +85,7 @@ function filtrarporPrecio(arr,filtro){
 const precio = filtrarporPrecio(productos,filtroprecio);
 console.log(precio);
 
-
-const ul = document.getElementById("lista");
-
+/*   const ul = document.getElementById("lista");
 for (const producto of productos) {
     let li = document.createElement("li");
     li.innerHTML=
@@ -112,10 +93,39 @@ for (const producto of productos) {
     <p>${producto.marca}</p>
     <span>${producto.precio}</span> `
     ul.append(li);
+}                               */
+
+
+const comprar = document.querySelector("#btn-compra");
+const carro = document.querySelector("#mostrar-carrito");
+
+
+function crearHtml(arr) {
+    let html = "";
+    for (const item of arr) {
+      html = `<div>
+                  <h6>${item.titulo}</h6>
+                  <p>${item.precio}</p>
+              </div>`;
+      div.innerHTML += html;
+    }
 }
 
-const h1 = document.getElementById("h1");
-let saludo = prompt("Hola ingresa tu nombre");
-h1.innerText = "Hola " + saludo ;
 
+function cargarCarro(arr,obj) {
+    return arr.push(obj);
+}
 
+//Listeners
+comprar.addEventListener("click", () => {
+    const nuevaCompra = new compra(
+      titulo.value,
+      precio.value,
+    );
+    console.log(nuevaCompra);
+  
+    cargarCarro(carrito, nuevaCompra);
+    //resetar el html de la tabla
+    tbody.innerHTML = "";
+    crearHtml(carrito);
+  });
