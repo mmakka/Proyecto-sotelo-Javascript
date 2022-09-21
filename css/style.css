@@ -1,8 +1,38 @@
-.conteiner-tarjetas{
-    display: flex;
-    justify-content: space-around;
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100&display=swap');
+
+
+
+
+
+.tittle{
+    font-family: 'Raleway', sans-serif; 
+    font-size: 30px;
+    color: black;
+    background: linear-gradient(#FFF, rgb(223, 161, 171));
+    text-align: center;
 }
 
-.carrito{
-    border-color: black;
+
+.tarjetas{
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.tarjeta {
+    margin: 20px;
+    padding: 10px;
+    max-width: 305px;
+    border: .0625rem solid #ccc;
+    border-radius: .5rem;
+    -webkit-box-shadow: 21px 18px 8px -23px rgba(114, 114, 115, 1);
+    -moz-box-shadow: 21px 18px 8px -23px rgba(114, 114, 115, 1);
+    box-shadow: 21px 18px 8px -23px rgba(114, 114, 115, 1);
+}
+
+.tarjeta img {
+    width: 100%;
+    object-fit: cover;
+    border-radius: .5rem;
 }
