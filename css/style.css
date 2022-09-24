@@ -1,7 +1,19 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100&display=swap');
 
 
-
+main{
+    display: grid;
+    grid-template-areas: "header header header "
+                          "main  main   aside "
+                          "main  main  aside ";
+}
 
 
 .tittle{
@@ -10,17 +22,25 @@
     color: black;
     background: linear-gradient(#FFF, rgb(223, 161, 171));
     text-align: center;
+    grid-area: "header";
+}
+
+.input-field{
+    margin: 5px;
 }
 
 
-.tarjetas{
+.tarjetas{ 
+    margin: 5px;
     display: flex;
     width: 100%;
     flex-wrap: wrap;
     justify-content: space-evenly;
+    grid-area: "main";
 }
 
 .tarjeta {
+    text-align: center;
     margin: 20px;
     padding: 10px;
     max-width: 305px;
@@ -35,4 +55,23 @@
     width: 100%;
     object-fit: cover;
     border-radius: .5rem;
+}
+
+
+.carrito{
+    width: 100%;
+    border: palegoldenrod 1px solid;
+    background:linear-gradient(#ffff, pink);
+    grid-template-areas: "aside";
+    padding: 10px;
+}
+
+.btnCarrito{
+    border: none;
+    font-size: 15px;
+    color: black;
+    background-color: aliceblue;
+    padding: 10px;
+    margin-left: 15px;
+    border-radius: 10px;
 }
