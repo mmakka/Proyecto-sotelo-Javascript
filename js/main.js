@@ -1,6 +1,6 @@
 const carrito= JSON.parse(localStorage.getItem("carrito")) || [];
 
-const search = document.querySelector("#input-search");
+const search = document.querySelector("#search");
 const cajaTarjetas = document.querySelector(".tarjetas");
  const cajaCarrito = document.querySelector(".carrito");
  const nuevoProducto = new ProductosInfo( 10,"Crema facial hidratante", "Avon",800, "articulo10.jpg");
@@ -56,11 +56,12 @@ function busquedaporNombre(arr,filtro) {
 function crearHtml(arr) {
     let html = "";
     for ( element of productos) {
+    let {nombre, marca, precio, img}=element;
       html += `<div class = "tarjeta">
       <img src="../images/${element.img}" alt="">
-      <h4>${element.nombre}</h4>
-      <h6>${element.marca}</h6>
-      <p>$${element.precio}</p>
+      <h4>${nombre}</h4>
+      <h6>${marca}</h6>
+      <p>$${precio}</p>
       <button class= "btnCarrito" id="btn-agregar${element.id}" >Agregar</button>
       </div>`
   };
@@ -80,15 +81,15 @@ function agregarFuncionAlBoton(){
 
 function agregarAlCarrito(element){ 
     let existe = carrito.some(prod=>prod.id === element.id);
-
-    if( existe===false ){
+      if( existe===false ){
         element.cantidad = 1;
         carrito.push(element);
     }
     else{
         let prodFind = carrito.find( prod=> prod.id===element.id );
-        prodFind.cantidad++;
-    }
+        prodFind.cantidad++;  
+    } 
+
     actualizarCarrito();
 };
 
@@ -123,9 +124,16 @@ function borrarProducto(){
     e.preventDefault();
     let nuevoFiltro =busquedaporNombre(productos,search.value);
     console.log(nuevoFiltro);
-    cajaTarjetas.innerHTML = "";
+    cajaTarjetas.innerHTML += nuevoFiltro;
     crearHtml(nuevoFiltro);
 });
+
+
+//DESTRUCTURING
+
+
+
+
 
 actualizarCarrito();
 crearHtml();
