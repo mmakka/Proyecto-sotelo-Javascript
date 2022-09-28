@@ -1,6 +1,8 @@
-const carrito= JSON.parse(localStorage.getItem("carrito")) || [];
+Swal.fire("Bienvenido");
 
-const search = document.querySelector("#search");
+
+const carrito= JSON.parse(localStorage.getItem("carrito")) || [];
+const search = document.querySelector(".search");
 const cajaTarjetas = document.querySelector(".tarjetas");
  const cajaCarrito = document.querySelector(".carrito");
  const nuevoProducto = new ProductosInfo( 10,"Crema facial hidratante", "Avon",800, "articulo10.jpg");
@@ -56,9 +58,9 @@ function busquedaporNombre(arr,filtro) {
 function crearHtml(arr) {
     let html = "";
     for ( element of productos) {
-    let {nombre, marca, precio, img}=element;
+    let {id, nombre, marca, precio,img }=element;
       html += `<div class = "tarjeta">
-      <img src="../images/${element.img}" alt="">
+      <img src="../images/${img}" alt="">
       <h4>${nombre}</h4>
       <h6>${marca}</h6>
       <p>$${precio}</p>
@@ -89,7 +91,6 @@ function agregarAlCarrito(element){
         let prodFind = carrito.find( prod=> prod.id===element.id );
         prodFind.cantidad++;  
     } 
-
     actualizarCarrito();
 };
 
@@ -105,6 +106,7 @@ function actualizarCarrito(){
     })
     localStorage.setItem("carrito",JSON.stringify(carrito))
     borrarProducto();
+  
 }
 
 function borrarProducto(){
@@ -112,13 +114,37 @@ function borrarProducto(){
         document.querySelector(`#btn-borrar${producto.id}`).addEventListener("click",()=>{
             let indice = carrito.findIndex(element=>element.id===producto.id);
             carrito.splice(indice,1);
+            Swal.fire({
+                title: 'Estas seguro?',
+                text: "Se eliminara este producto de tu compra!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Si, estoy seguro!'
+              }).then((result) => {
+                if (result.isConfirmed) {
+                  Swal.fire(
+                    'Eliminado!',
+                  )
+                }
+              })
             actualizarCarrito()
         })
     })
-}
+};
 
 
 
+
+
+
+
+
+
+
+
+/*
 //listener Funciona pero no lo pinta en html;
     search.addEventListener("click", (e) => {
     e.preventDefault();
@@ -129,9 +155,7 @@ function borrarProducto(){
 });
 
 
-//DESTRUCTURING
-
-
+                                                        */
 
 
 
