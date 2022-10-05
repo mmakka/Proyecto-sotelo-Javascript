@@ -8,7 +8,7 @@ const cajaTarjetas = document.querySelector(".tarjetas");
  const nuevoProducto = new ProductosInfo( 10,"Crema facial hidratante", "Avon",800, "articulo10.jpg");
  const nuevoProducto2 = new ProductosInfo( 11,"Crema facial hidratante","Revlon",1100,"articulo10.jpg");
  
-const productos = [
+/* const productos = [
     {id: 1, nombre : "Labial 24hs matte" , marca : "Maybelline", precio : 1500, img: "articulo1.jpg"},
     {id: 2, nombre : "Labial 24 hs" , marca : "Maybelline", precio :1600, img: "articulo3.jpg"},
     {id: 3, nombre : "Labial matte" , marca : "Maybelline", precio :1300 , img: "articulo3.jpg"},
@@ -17,7 +17,7 @@ const productos = [
     {id: 6, nombre : "Mascara de pestañas" , marca : "Maybelline", precio :1500, img: "articulo7.jpg"},
     {id: 8, nombre : "Mascara de pestañas" , marca : "Maybelline", precio :1100, img: "articulo1.jpg"},
     {id: 9, nombre : "Mascara de pestañas larga duracion" , marca : "Maybelline", precio :1500, img: "articulo11.jpg "},
-];
+];  */
 
 function ProductosInfo(id,nombre,marca,precio,img){
     this.id = id;
@@ -31,8 +31,8 @@ function cargarArticulos(arr,element) {
     arr.push(element);
 }
 
-cargarArticulos(productos,nuevoProducto);
-cargarArticulos(productos,nuevoProducto2);
+//cargarArticulos(productos,nuevoProducto);
+//cargarArticulos(productos,nuevoProducto2);
 
 
 /*flitrar por precio
@@ -57,7 +57,7 @@ function busquedaporNombre(arr,filtro) {
 
 function crearHtml(arr) {
     let html = "";
-    for ( element of productos) {
+    for ( element of arr) {
     let {id, nombre, marca, precio,img }=element;
       html += `<div class = "tarjeta">
       <img src="../images/${img}" alt="">
@@ -135,15 +135,6 @@ function borrarProducto(){
 };
 
 
-
-
-
-
-
-
-
-
-
 /*
 //listener Funciona pero no lo pinta en html;
     search.addEventListener("click", (e) => {
@@ -152,13 +143,18 @@ function borrarProducto(){
     console.log(nuevoFiltro);
     cajaTarjetas.innerHTML += nuevoFiltro;
     crearHtml(nuevoFiltro);
-});
+}); */
+
+const respuesta = async ()=>{
+    const response = await fetch (`./js/data.json`);
+
+    const data = await response.json();
+    crearHtml(data);
+
+}
 
 
-                                                        */
-
-
-
+respuesta();
 actualizarCarrito();
-crearHtml();
+
 
