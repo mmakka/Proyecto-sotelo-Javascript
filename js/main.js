@@ -1,5 +1,5 @@
 
-Swal.fire("Bienvenido");
+ // Swal.fire("Bienvenido");
 
 const total= document.querySelector("#total");
 const carrito= JSON.parse(localStorage.getItem("carrito")) || [];
@@ -33,10 +33,6 @@ function ProductosInfo(id,nombre,marca,precio,img){
 function cargarArticulos(arr,element) {
     arr.push(element);
 }
-
-//cargarArticulos(productos,nuevoProducto);
-//cargarArticulos(productos,nuevoProducto2);
-
 
 
 function crearHtml(arr) {
@@ -105,7 +101,6 @@ function actualizarCarrito(){
         <button class="btnCarrito" id="btn-borrar${prod.id}">Eliminar</button>
         </div>
         <div>`
-        
     })
     
     localStorage.setItem("carrito",JSON.stringify(carrito))
@@ -158,11 +153,21 @@ function sumarTotal(){
     const data = await response.json();
     crearHtml(data);
 
+
     search.addEventListener("click", ()=>{
         const filtro = filtrarPorNombre(data)
         crearHtml(filtro)
     });
 }
+
+const btnFinal = document.querySelector("#finalizar");
+
+
+btnFinal.addEventListener("click",()=>{
+    cajaCarrito.style.display = "none";
+    cardTotal.style.display = "none";
+    localStorage.clear()
+})
 
 
 fetchApi();
