@@ -29,6 +29,9 @@ main{
     margin: 5px;
 }
 
+.input-buscador{
+    margin-top: 5px;
+}
 
 .tarjetas{ 
     margin: 5px;
@@ -74,4 +77,19 @@ main{
     padding: 10px;
     margin-left: 15px;
     border-radius: 10px;
+}
+
+#cardTotal{
+    padding: 10px;
+    margin: 5px;
+    font-size: 25px;
+    background:linear-gradient(#ffff, pink);
+}
+
+footer{
+    padding: 5px;
+    font-weight: bold ;
+    text-align: center;
+    background:linear-gradient(rgb(255, 181, 181), rgb(243, 50, 82));
+
 }

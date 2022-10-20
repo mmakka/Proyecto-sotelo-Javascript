@@ -21,21 +21,27 @@
     <!--Main-->
     <main>
         <!--Filtro-->
-        <div>
-            <div class="input-field inline">
-                <input id="input-search" type="search" class="validate">
-                <button id= "search" type="submit">Buscar</button>
-            </div>
-        <!--contenido dinamico-->
+        <div class="input-buscador">
+            <label for="ingreso"></label>
+            <input type="text" name="ingreso" value=""id="ingreso" >
+            <button id="btnSearch" >BUSCAR</button>
+        </div>
 
+        <!--contenido dinamico TARJETAS-->
         <div class="tarjetas" id="container.tarjetas">
         </div>
-    </div>
-        <div class="carrito" id="container.carrito"> 
-            <h6>Usted compro</h6>
-        </div>
-    </main>
+        <!--CARRITO DINAMICO-->
+        <div class="contenedor">
 
+        <div class="carrito" id="container.carrito"> 
+        </div>
+        <div class="botones-finales">
+        <h3 id="cardTotal"></h3>
+        <button><a href="./pages/login.html" >Comprar</a></button>
+    </div>
+    </div>
+    </main>
+    <footer>Todos los derechos reservados</footer>
 
     <!--sweetalert-->
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
