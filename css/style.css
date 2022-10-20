@@ -8,21 +8,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100&display=swap');
 
 
+.tittle{
+    background-image: url(../images/index-img.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 400px;
+    color: #FFF;
+    text-align: center;
+    font-family: 'Raleway', sans-serif; 
+    grid-area: "header";
+}
+
+
 main{
     display: grid;
     grid-template-areas: "header header header "
                           "main  main   aside "
                           "main  main  aside ";
-}
-
-
-.tittle{
-    font-family: 'Raleway', sans-serif; 
-    font-size: 30px;
-    color: black;
-    background: linear-gradient(#FFF, rgb(223, 161, 171));
-    text-align: center;
-    grid-area: "header";
 }
 
 .input-field{
@@ -31,6 +33,7 @@ main{
 
 .input-buscador{
     margin-top: 5px;
+    padding: 5px;
 }
 
 .tarjetas{ 
@@ -125,3 +128,4 @@ footer{
     background:linear-gradient(rgb(255, 181, 181), rgb(243, 50, 82));
 
 }
+

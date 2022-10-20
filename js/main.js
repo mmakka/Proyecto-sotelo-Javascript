@@ -1,6 +1,6 @@
 
  // Swal.fire("Bienvenido");
-
+const btnFinal = document.querySelector("#finalizar");
 const total= document.querySelector("#total");
 const carrito= JSON.parse(localStorage.getItem("carrito")) || [];
 const cajaTarjetas = document.querySelector(".tarjetas");
@@ -10,17 +10,6 @@ const search = document.querySelector("#btnSearch");
 const nuevoProducto = new ProductosInfo( 10,"Crema facial hidratante", "Avon",800, "articulo10.jpg");
 const nuevoProducto2 = new ProductosInfo( 11,"Crema facial hidratante","Revlon",1100,"articulo10.jpg");
  
-// const productos = [
-   /*  {id: 1, nombre : "Labial 24hs matte" , marca : "Maybelline", precio : 1500, img: "articulo1.jpg"},
-    {id: 2, nombre : "Labial 24 hs" , marca : "Maybelline", precio :1600, img: "articulo3.jpg"},
-    {id: 3, nombre : "Labial matte" , marca : "Maybelline", precio :1300 , img: "articulo3.jpg"},
-    {id: 4, nombre : "Labial hidratante" , marca : "Maybelline", precio :1000, img: "articulo4.jpg"},
-    {id: 5, nombre : "Labial perlado" , marca : "Maybelline", precio :1100, img: "articulo5.jpg"},
-    {id: 6, nombre : "Mascara de pestañas" , marca : "Maybelline", precio :1500, img: "articulo7.jpg"},
-    {id: 8, nombre : "Mascara de pestañas" , marca : "Maybelline", precio :1100, img: "articulo1.jpg"},
-    {id: 9, nombre : "Mascara de pestañas larga duracion" , marca : "Maybelline", precio :1500, img: "articulo11.jpg "},
- ]; */
-
 
 function ProductosInfo(id,nombre,marca,precio,img){
     this.id = id;
@@ -33,7 +22,6 @@ function ProductosInfo(id,nombre,marca,precio,img){
 function cargarArticulos(arr,element) {
     arr.push(element);
 }
-
 
 function crearHtml(arr) {
     let html = "";
@@ -63,7 +51,6 @@ function filtrarPorNombre(array){
       return array.filter((e) => e.nombre.includes(nombreC));
     }
   }
-
 
 
 function agregarFuncionAlBoton(productos){
@@ -133,9 +120,6 @@ function borrarProducto(){
     })
 };
 
-//SUMA TOTAL Y FUNCIONA :)
-  /* const cantidad = carrito.reduce((acc,prod)=> acc + prod.cantidad, 0 );
-   const total = carrito.reduce ((acc,prod)=> acc + prod.cantidad * prod.precio , 0 ); */
 
 function sumarTotal(){
     let Total = 0;
@@ -160,13 +144,11 @@ function sumarTotal(){
     });
 }
 
-const btnFinal = document.querySelector("#finalizar");
 
-
-btnFinal.addEventListener("click",()=>{
-    cajaCarrito.style.display = "none";
-    cardTotal.style.display = "none";
-    localStorage.clear()
+    btnFinal.addEventListener("click",()=>{
+        cajaCarrito.style.display = "none";
+        cardTotal.style.display = "none";
+        localStorage.clear()
 })
 
 
