@@ -1,6 +1,6 @@
 
  // Swal.fire("Bienvenido");
-// const btnFinal = document.querySelector("#finalizar");
+
 const total= document.querySelector("#total");
 const carrito= JSON.parse(localStorage.getItem("carrito")) || [];
 const cajaTarjetas = document.querySelector(".tarjetas");
@@ -144,13 +144,12 @@ function sumarTotal(){
     });
 }
 
+const finalCompra = document.querySelector("#login");
 
- /*   btnFinal.addEventListener("click",()=>{
-        cajaCarrito.style.display = "none";
-        cardTotal.style.display = "none";
-        localStorage.clear()
-})    */
-
+finalCompra.addEventListener("click", ()=>{
+      cajaCarrito.style.display = "none";
+       cardTotal.style.display = "none";
+})
 
 fetchApi();
 actualizarCarrito();

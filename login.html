@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
     <title>Login</title>
 </head>
 <body>
@@ -22,11 +23,22 @@
             <label for="email">Password</label>
             <input type="password" name="password" id="password">
           </div>
-          <input type="submit" id="btnIngresar">
+          <input type="submit" id="btnIngresar" class="btnComprar">
         </form>
       </div>
 </main>
 
+<aside>
+    <div class="final">
+    <h3>Confirme su compra </h3>
+    <div class="botones">
+    <button id="finalizar" class="btnComprar">Comprar</button>
+    <button class="btnComprar">Boton de arrepentimiento</button>
+</div>
+</div>
+</aside>
+ <!--sweetalert-->
+ <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <!--Aca va mi JavaScript-->
     <script src="./js/login.js"></script>
 </body>
