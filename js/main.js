@@ -1,6 +1,6 @@
 
  // Swal.fire("Bienvenido");
-const btnFinal = document.querySelector("#finalizar");
+// const btnFinal = document.querySelector("#finalizar");
 const total= document.querySelector("#total");
 const carrito= JSON.parse(localStorage.getItem("carrito")) || [];
 const cajaTarjetas = document.querySelector(".tarjetas");
@@ -145,11 +145,11 @@ function sumarTotal(){
 }
 
 
-    btnFinal.addEventListener("click",()=>{
+ /*   btnFinal.addEventListener("click",()=>{
         cajaCarrito.style.display = "none";
         cardTotal.style.display = "none";
         localStorage.clear()
-})
+})    */
 
 
 fetchApi();
