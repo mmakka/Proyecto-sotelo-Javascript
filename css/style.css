@@ -4,7 +4,6 @@
     box-sizing: border-box;
 }
 
-
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100&display=swap');
 
 
@@ -19,6 +18,17 @@
     grid-area: "header";
 }
 
+.cart{
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    justify-content: end;
+    
+}
+
+.cart .span{
+    display: none;
+}
 
 main{
     display: grid;
