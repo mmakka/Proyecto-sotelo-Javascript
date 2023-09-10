@@ -84,14 +84,11 @@ function actualizarCarrito(){
         </div>
         <div>`
     })
-   
     localStorage.setItem("carrito",JSON.stringify(carrito))
     borrarProducto();
     sumarTotal();
    
 }
-
-
 
 function borrarProducto () {
     carrito.forEach(producto =>{

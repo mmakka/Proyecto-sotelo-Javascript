@@ -7,7 +7,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100&display=swap');
 
 .promociones-cupon{
-    background-color: rgb(223, 126, 182);
+    background-color:#F0D8D9 ;
     text-align: center;
     padding: 10px;
     font-family: 'Raleway', sans-serif; 
@@ -33,14 +33,14 @@
     height: auto;
     padding: 14px;
     border-radius: 8px;
-    border-color: violet;
+    border-color: #E6E6FA;
     background-color: #FFF;
 }
 
 .btnBuscar{
     border: none;
     border-radius: 5px;
-    background-color: violet;
+    background-color:#D3D3D3 ;
     color: #FFF;
     padding: 5px;
 }
@@ -49,41 +49,80 @@
     text-align: center;
     align-items: center;
     margin-right: 15px;
+    justify-content: end;
+    display: inline;
     .p1{
         text-align: left;
-        font-weight: bold;
         font-size: 15px;
     }
-    .bi bi-person{
-        justify-content: right;
+}
+
+    .text-header{
+        padding: 8px;
+        margin: 5px;
+        text-align: center;
+        font-size: 18px;
     }
 
-}
+    .img-header{
+        width: 100%;
+        height: 60%;
+    }
+    .text-header-2{
+        margin-top: 3px;
+        padding: 30px;
+        text-align:center;
+        font-family: 'Raleway', sans-serif; 
+    }
+
+    /* MAIN- TARJETAS */
+    
+    .tarjetas{ 
+        margin: 5px;
+        display: flex;
+        width: 100%;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+    }
+
+    
+    .tarjeta {
+        text-align: center;
+        margin: 20px;
+        padding: 10px;
+        max-width: 305px;
+        border: .0625rem solid #ccc;
+        border-radius: .5rem;
+        -webkit-box-shadow: 21px 18px 8px -23px rgba(114, 114, 115, 1);
+        -moz-box-shadow: 21px 18px 8px -23px rgba(114, 114, 115, 1);
+        box-shadow: 21px 18px 8px -23px rgba(114, 114, 115, 1);
+    }
+    .tarjeta img {
+        width: 100%;
+        object-fit: cover;
+        border-radius: .5rem;
+    }
+    
+    .btnCarrito  {
+        border: none;
+        font-size: 18px;
+        color: #FFF;
+        background-color:#c5c6c8 ;
+        padding: 10px;
+        margin-left: 15px;
+        border-radius: 5px;
+    }
+    
+    
 
 
-
-
-
-
-.tittle{
-   background-image: url(../images/index-img.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 400px;
-    color: #FFF;
-    text-align: center;
-    font-family: 'Raleway', sans-serif; 
-    grid-area: "header";
-}
 
 /* CART*/
-
 .cart{
     display: flex;
     align-items: center;
     padding: 10px;
     justify-content: end;
-    
 }
 .cart .span{
     display: none;
@@ -91,39 +130,6 @@
 /*FIN CART */
 
 
-main{
-    display: grid;
-    grid-template-areas: "header header header "
-                          "main  main   aside "
-                          "main  main  aside ";
-}
-
-.tarjetas{ 
-    margin: 5px;
-    display: flex;
-    width: 100%;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    grid-area: "main";
-}
-
-.tarjeta {
-    text-align: center;
-    margin: 20px;
-    padding: 10px;
-    max-width: 305px;
-    border: .0625rem solid #ccc;
-    border-radius: .5rem;
-    -webkit-box-shadow: 21px 18px 8px -23px rgba(114, 114, 115, 1);
-    -moz-box-shadow: 21px 18px 8px -23px rgba(114, 114, 115, 1);
-    box-shadow: 21px 18px 8px -23px rgba(114, 114, 115, 1);
-}
-
-.tarjeta img {
-    width: 100%;
-    object-fit: cover;
-    border-radius: .5rem;
-}
 
 
 .carrito{
@@ -134,27 +140,18 @@ main{
     padding: 10px;
 }
 
-.btnCarrito  {
-    border: none;
-    font-size: 15px;
-    color: black;
-    background-color: aliceblue;
-    padding: 10px;
-    margin-left: 15px;
-    border-radius: 10px;
-}
-
 
 .btnComprar{
     border: none;
     font-size: 20px;
-    background-color: pink;
+    background-color:#c5c6c8;
     color: #FFF;
     margin-top: 5px;
     padding: 10px;
     border-radius: 5px;
     margin: 5px;
 }
+
 
 #cardTotal{
     padding: 10px;
@@ -168,13 +165,6 @@ main{
     
 }
 
-footer{
-    padding: 5px;
-    font-weight: bold ;
-    text-align: center;
-    background:linear-gradient(rgb(255, 181, 181), rgb(243, 50, 82));
-
-}
 
 
 .login.h3{
@@ -207,9 +197,10 @@ footer{
     margin: 15px
 }
 
-header h3{
+
+footer{
+    padding: 5px;
+    font-weight: bold ;
     text-align: center;
-    background: linear-gradient(#cccc, #fff);
-    padding: 20px;
-    font-size: larger;
+    background:#FFC0CB
 }
