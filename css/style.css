@@ -6,9 +6,67 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100&display=swap');
 
+.promociones-cupon{
+    background-color: rgb(223, 126, 182);
+    text-align: center;
+    padding: 10px;
+    font-family: 'Raleway', sans-serif; 
+}
+
+.navbar{
+    background-color: #ccc;
+}
+
+.container-nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.container-buscador{
+    padding: 10px;
+}
+
+.input-1{
+    margin-left: 8px;
+    width: 350px;
+    height: auto;
+    padding: 14px;
+    border-radius: 8px;
+    border-color: violet;
+    background-color: #FFF;
+}
+
+.btnBuscar{
+    border: none;
+    border-radius: 5px;
+    background-color: violet;
+    color: #FFF;
+    padding: 5px;
+}
+
+.user-container{
+    text-align: center;
+    align-items: center;
+    margin-right: 15px;
+    .p1{
+        text-align: left;
+        font-weight: bold;
+        font-size: 15px;
+    }
+    .bi bi-person{
+        justify-content: right;
+    }
+
+}
+
+
+
+
+
 
 .tittle{
-    background-image: url(../images/index-img.jpg);
+   background-image: url(../images/index-img.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     height: 400px;
@@ -18,6 +76,8 @@
     grid-area: "header";
 }
 
+/* CART*/
+
 .cart{
     display: flex;
     align-items: center;
@@ -25,25 +85,17 @@
     justify-content: end;
     
 }
-
 .cart .span{
     display: none;
 }
+/*FIN CART */
+
 
 main{
     display: grid;
     grid-template-areas: "header header header "
                           "main  main   aside "
                           "main  main  aside ";
-}
-
-.input-field{
-    margin: 5px;
-}
-
-.input-buscador{
-    margin-top: 5px;
-    padding: 5px;
 }
 
 .tarjetas{ 
@@ -92,13 +144,6 @@ main{
     border-radius: 10px;
 }
 
-.btnBuscar{
-    border: none;
-    border-radius: 5px;
-    background-color: violet;
-    color: #FFF;
-    padding: 10px;
-}
 
 .btnComprar{
     border: none;

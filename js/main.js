@@ -1,4 +1,3 @@
-
 const total= document.querySelector(".cardTotal");
 const carrito= JSON.parse(localStorage.getItem("carrito")) || [];
 const cantidadCarrito = document.getElementById("cantidadCarrito")
@@ -9,7 +8,6 @@ const search = document.querySelector("#btnSearch");
 const nuevoProducto = new ProductosInfo( 10,"Crema facial hidratante", "Avon",800, "articulo10.jpg");
 const nuevoProducto2 = new ProductosInfo( 11,"Crema facial hidratante","Revlon",1100,"articulo10.jpg");
 const finalCompra = document.querySelector("#login");
- 
 
 function ProductosInfo(id,nombre,marca,precio,img){
     this.id = id;
@@ -42,7 +40,6 @@ function crearHtml(arr) {
     
 };
 
-
 function filtrarPorNombre(array){
     let nombre = buscar.value;
     let nombreC = nombre.charAt(0).toUpperCase() + nombre.slice(1);
@@ -53,7 +50,6 @@ function filtrarPorNombre(array){
     }
 }
 
-
 function agregarFuncionAlBoton(productos){
     productos.forEach(element =>{
         document.querySelector(`#btn-agregar${element.id}`).addEventListener("click",()=>{
@@ -62,19 +58,15 @@ function agregarFuncionAlBoton(productos){
     }) 
 };
 
-
-
 function agregarAlCarrito(element){ 
-    let existe = carrito.some(prod=>prod.id === element.id);
-      if( existe===false ){
+    let existe = carrito.some( prod => prod.id === element.id);
+      if ( existe===false ) {
         element.cantidad = 1;
         carrito.push(element);
-    }
-    else{
-        let prodFind = carrito.find( prod=> prod.id===element.id);
+     } else {
+        let prodFind = carrito.find( prod=> prod.id === element.id);
         prodFind.cantidad ++; 
     } 
-  
     actualizarCarrito();
     sumarTotal();
 };
@@ -101,26 +93,27 @@ function actualizarCarrito(){
 
 
 
-function borrarProducto(){
+function borrarProducto () {
     carrito.forEach(producto =>{
         document.querySelector(`#btn-borrar${producto.id}`).addEventListener("click",()=>{
-            console.log("clickeaste");
-           let indice = carrito.findIndex(element=>element.id === producto.id);
-            carrito.splice(indice,1);
+        console.log("clickeaste");
+        let indice = carrito.findIndex(element => element.id === producto.id);
+            carrito.splice(indice -1,1);
             actualizarCarrito()
               })  
         })
        
 }
 
-function sumarTotal(){
+function sumarTotal () {
     let Total = 0;
-    cardTotal= document.querySelector("#cardTotal");
+    cardTotal = document.querySelector("#cardTotal");
     carrito.forEach((prod) =>{
         const precio = carrito.reduce((acc,prod)=> acc + prod.precio, 0 )
         Total =  carrito.reduce ((acc,prod)=> acc + prod.precio * prod.cantidad , 0 )
     });
-    cardTotal.innerHTML =`Total $${Total}`
+
+    cardTotal.innerHTML =`Total $${Total} `
 }
 
 
