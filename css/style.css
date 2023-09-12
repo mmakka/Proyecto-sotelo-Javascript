@@ -76,7 +76,6 @@
     }
 
     /* MAIN- TARJETAS */
-    
     .tarjetas{ 
         margin: 5px;
         display: flex;
@@ -84,8 +83,6 @@
         flex-wrap: wrap;
         justify-content: space-evenly;
     }
-
-    
     .tarjeta {
         text-align: center;
         margin: 20px;
@@ -113,9 +110,6 @@
         border-radius: 5px;
     }
     
-    
-
-
 
 /* CART*/
 .cart{
