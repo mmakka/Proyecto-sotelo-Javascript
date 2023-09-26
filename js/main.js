@@ -1,4 +1,6 @@
 const total= document.querySelector(".cardTotal");
+const vercarrito = document.querySelector(".ver-carrito");
+const modalContent = document.querySelector(".modal-container");
 const carrito= JSON.parse(localStorage.getItem("carrito")) || [];
 const cantidadCarrito = document.getElementById("cantidadCarrito")
 const cajaTarjetas = document.querySelector(".tarjetas");
@@ -32,7 +34,7 @@ function crearHtml(arr) {
         <h4>${nombre}</h4>
         <h6>${marca}</h6>
         <p>$${precio}</p>
-        <button class= "btnCarrito" id="btn-agregar${element.id}">Agregar</button>
+        <button class= "btnCarrito" id ="btn-agregar${element.id}">Agregar</button>
         </div>`
     };
     cajaTarjetas.innerHTML += html;
@@ -60,50 +62,48 @@ function agregarFuncionAlBoton(productos){
 
 function agregarAlCarrito(element){ 
     let existe = carrito.some( prod => prod.id === element.id);
-      if ( existe===false ) {
+      if (existe===false ) {
         element.cantidad = 1;
         carrito.push(element);
      } else {
         let prodFind = carrito.find( prod=> prod.id === element.id);
         prodFind.cantidad ++; 
     } 
-    actualizarCarrito();
-    sumarTotal();
+ //   actualizarCarrito();
+ //   sumarTotal();
 };
 
 
 function actualizarCarrito(){
     cajaCarrito.innerHTML = "";
     carrito.forEach(prod=>{
-        cajaCarrito.innerHTML +=`<div class ="carrito">
+        cajaCarrito.innerHTML +=`<div class="carrito">
         <div>
-        <h4>${prod.nombre}</h4>
-        <h3>CANTIDAD:${prod.cantidad}</h3>
+        <h3>${prod.nombre}</h3>
+        <h6>CANTIDAD:${prod.cantidad}</h6>
         <p>$${prod.precio * prod.cantidad}</p>
-        <button id="btn-borrar${prod.id}" class="btnCarrito">Eliminar</button>
+        <button id="btn-borrar${prod.id}"class="btnCarrito">Eliminar</button>
         </div>
         <div>`
-    })
+    });
     localStorage.setItem("carrito",JSON.stringify(carrito))
     borrarProducto();
     sumarTotal();
-   
 }
-
 
 
 function borrarProducto () {
     carrito.forEach(producto =>{
         document.querySelector(`#btn-borrar${producto.id}`).addEventListener("click",()=>{
         console.log("clickeaste");
-        
             let indice = carrito.findIndex(element => element.id === producto.id);
             carrito.splice(indice -1,1);
             actualizarCarrito()
-        
             })  
         })  
 }
+
+
 
 function sumarTotal () {
     let Total = 0;
@@ -112,7 +112,10 @@ function sumarTotal () {
         const precio = carrito.reduce((acc,prod)=> acc + prod.precio, 0 )
         Total =  carrito.reduce ((acc,prod)=> acc + prod.precio * prod.cantidad , 0 )
     });
-    total.innerHTML =`Total $${Total} `
+    total.innerHTML =`
+    <div>
+    <h6>Total $${Total} </h6>
+    </div>`
 }
 
 
@@ -120,6 +123,11 @@ const fetchApi = async ()=>{
 const response = await fetch(`./js/data.json`);
 const data = await response.json();
 crearHtml(data);
+
+vercarrito.addEventListener("click",()=>{
+    actualizarCarrito();
+    sumarTotal();
+   });
 
 
 search.addEventListener("click", ()=>{
@@ -134,12 +142,6 @@ finalCompra.addEventListener("click", ()=>{
     total.style.display = "none";
     finalCompra.style.display= "none";
 });
-
-//NO FUNCIONA
-const carritoCounter = ()=>{
-    cantidadCarrito.style.display= "block";
-    cantidadCarrito.innerText = carrito.lenght;
-}
 
 
 fetchApi();

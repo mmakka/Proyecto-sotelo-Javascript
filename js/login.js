@@ -45,8 +45,6 @@ btnFinal.addEventListener("click",()=>{
               url("/images/nyan-cat.gif")
               left top
               no-repeat
-            `
-          })
-
+            ` })
 
 })  
