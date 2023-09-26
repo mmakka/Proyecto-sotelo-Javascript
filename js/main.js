@@ -1,4 +1,4 @@
-const total= document.querySelector(".cardTotal");
+const total = document.querySelector(".cardTotal");
 const vercarrito = document.querySelector(".ver-carrito");
 const modalContent = document.querySelector(".modal-container");
 const carrito= JSON.parse(localStorage.getItem("carrito")) || [];
@@ -62,17 +62,16 @@ function agregarFuncionAlBoton(productos){
 
 function agregarAlCarrito(element){ 
     let existe = carrito.some( prod => prod.id === element.id);
-      if (existe===false ) {
+    if (existe===false ) {
         element.cantidad = 1;
         carrito.push(element);
-     } else {
+    } else {
         let prodFind = carrito.find( prod=> prod.id === element.id);
         prodFind.cantidad ++; 
     } 
  //   actualizarCarrito();
  //   sumarTotal();
 };
-
 
 function actualizarCarrito(){
     cajaCarrito.innerHTML = "";
@@ -104,19 +103,18 @@ function borrarProducto () {
 }
 
 
-
 function sumarTotal () {
-    let Total = 0;
+    let totalProductos = 0;
     cardTotal = document.querySelector("#cardTotal");
     carrito.forEach((prod) =>{
-        const precio = carrito.reduce((acc,prod)=> acc + prod.precio, 0 )
-        Total =  carrito.reduce ((acc,prod)=> acc + prod.precio * prod.cantidad , 0 )
+        const precio = carrito.reduce((acc,prod)=> acc + prod.precio, 0 );
+        totalProductos = carrito.reduce ((acc,prod)=> acc + prod.precio * prod.cantidad , 0 );
+        cardTotal.innerHTML =`
+        <div>
+        <h6>Total: $${totalProductos}</h6>
+        </div>`
     });
-    total.innerHTML =`
-    <div>
-    <h6>Total $${Total} </h6>
-    </div>`
-}
+};
 
 
 const fetchApi = async ()=>{
