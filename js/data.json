@@ -50,23 +50,30 @@
     },
     {
        "id":8,
-       "nombre":"Mascara de pestañas larga duracion",
+       "nombre":"Base en crema",
        "marca":"Maybelline",
        "precio":1500,
-       "img":"articulo11.jpg "
+       "img":"articulo10.jpg "
     },
     {
       "id":9,
       "nombre":"Crema facial hidratante",
       "marca":"Avon",
       "precio":1900,
-      "img":"articulo10.jpg "
+      "img":"articulo8.jpg "
    },
    {
-      "id":11,
+      "id":10,
       "nombre":"Crema facial hidratante",
       "marca":"Revlon",
       "precio":1950,
-      "img":"articulo10.jpg "
+      "img":"articulo9.jpg "
+   },
+   {
+      "id":11,
+      "nombre":"Gel hidratante",
+      "marca":"Revlon",
+      "precio":2950,
+      "img":"articulo11.jpg "
    }
  ]

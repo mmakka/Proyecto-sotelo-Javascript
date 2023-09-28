@@ -7,7 +7,6 @@ const cajaTarjetas = document.querySelector(".tarjetas");
 const cajaCarrito = document.querySelector(".carrito");
 const buscar = document.querySelector("#ingreso");
 const search = document.querySelector("#btnSearch");
-const nuevoProducto = new ProductosInfo( 10,"Crema facial hidratante", "Avon",800, "articulo10.jpg");
 const nuevoProducto2 = new ProductosInfo( 11,"Crema facial hidratante","Revlon",1100,"articulo10.jpg");
 const finalCompra = document.querySelector("#login");
 
