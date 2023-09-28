@@ -47,4 +47,4 @@ btnFinal.addEventListener("click",()=>{
               no-repeat
             ` })
 
-})  
+});  

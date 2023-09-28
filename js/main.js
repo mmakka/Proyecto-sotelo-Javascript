@@ -56,9 +56,12 @@ function agregarFuncionAlBoton(productos){
     productos.forEach(element =>{
         document.querySelector(`#btn-agregar${element.id}`).addEventListener("click",()=>{
             agregarAlCarrito(element);
+            
+
         })
     }) 
 };
+
 
 function agregarAlCarrito(element){ 
     let existe = carrito.some( prod => prod.id === element.id);
@@ -88,7 +91,7 @@ function actualizarCarrito(){
     localStorage.setItem("carrito",JSON.stringify(carrito))
     borrarProducto();
     sumarTotal();
-}
+};
 
 
 function borrarProducto () {
@@ -100,7 +103,7 @@ function borrarProducto () {
             actualizarCarrito()
             })  
         })  
-}
+};
 
 
 function sumarTotal () {

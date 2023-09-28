@@ -79,7 +79,7 @@
     .tarjetas{ 
         margin: 5px;
         display: flex;
-        width: 100%;
+        width: 80%;
         flex-wrap: wrap;
         justify-content: space-evenly;
     }
@@ -104,10 +104,16 @@
         border: none;
         font-size: 18px;
         color: #FFF;
-        background-color:#c5c6c8 ;
+        background-color:#d3d3d3;
         padding: 10px;
         margin-left: 15px;
         border-radius: 5px;
+        transition: 0.5;
+    } 
+
+    .btnCarrito:hover {
+      
+        color: pink;
     }
     
 
@@ -121,10 +127,6 @@
 .cart .span{
     display: none;
 }
-/*FIN CART */
-
-
-
 
 .carrito{
     width: 100%;
@@ -135,7 +137,11 @@
 }
 
 
-.btnComprar{
+/*FIN CART */
+
+
+
+/*.btnComprar{
     border: none;
     font-size: 20px;
     background-color:#c5c6c8;
@@ -144,7 +150,7 @@
     padding: 10px;
     border-radius: 5px;
     margin: 5px;
-}
+}*/
 
 
 #cardTotal{
@@ -192,9 +198,15 @@
 }
 
 
+
+
+
+
+
+
 footer{
     padding: 5px;
     font-weight: bold ;
     text-align: center;
-    background:#FFC0CB
+    background:#ffc0cb;
 }

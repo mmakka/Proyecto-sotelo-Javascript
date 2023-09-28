@@ -11,7 +11,7 @@
        "nombre":"Labial 24 hs",
        "marca":"Maybelline",
        "precio":1600,
-       "img":"articulo3.jpg"
+       "img":"articulo2.jpg"
     },
     {
        "id":3,
@@ -38,21 +38,35 @@
        "id":6,
        "nombre":"Mascara de pestañas",
        "marca":"Maybelline",
-       "precio":1500,
+       "precio":1600,
+       "img":"articulo6.jpg"
+    },
+    {
+       "id":7,
+       "nombre":"Mascara de pestañas",
+       "marca":"Maybelline",
+       "precio":1100,
        "img":"articulo7.jpg"
     },
     {
        "id":8,
-       "nombre":"Mascara de pestañas",
-       "marca":"Maybelline",
-       "precio":1100,
-       "img":"articulo1.jpg"
-    },
-    {
-       "id":9,
        "nombre":"Mascara de pestañas larga duracion",
        "marca":"Maybelline",
        "precio":1500,
        "img":"articulo11.jpg "
-    }
+    },
+    {
+      "id":9,
+      "nombre":"Crema facial hidratante",
+      "marca":"Avon",
+      "precio":1900,
+      "img":"articulo10.jpg "
+   },
+   {
+      "id":11,
+      "nombre":"Crema facial hidratante",
+      "marca":"Revlon",
+      "precio":1950,
+      "img":"articulo10.jpg "
+   }
  ]
