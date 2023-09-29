@@ -4,21 +4,21 @@
        "nombre":"Labial 24hs matte",
        "marca":"Maybelline",
        "precio":1500,
-       "img":"articulo1.jpg"
+       "img":"articulo01.jpg"
     },
     {
        "id":2,
        "nombre":"Labial 24 hs",
        "marca":"Maybelline",
        "precio":1600,
-       "img":"articulo2.jpg"
+       "img":"articulo02.jpg"
     },
     {
        "id":3,
        "nombre":"Labial matte",
        "marca":"Maybelline",
        "precio":1300,
-       "img":"articulo3.jpg"
+       "img":"articulo03.jpg"
     },
     {
        "id":4,
@@ -39,14 +39,14 @@
        "nombre":"Mascara de pestañas",
        "marca":"Maybelline",
        "precio":1600,
-       "img":"articulo6.jpg"
+       "img":"articulo12.webp"
     },
     {
        "id":7,
        "nombre":"Mascara de pestañas",
        "marca":"Maybelline",
        "precio":1100,
-       "img":"articulo7.jpg"
+       "img":"articulo13.webp"
     },
     {
        "id":8,
